@@ -1,0 +1,9 @@
+version: 1.0
+
+endpoints:
+- name: PatientAPI 9090
+  port: 9090
+  type: REST
+  networkVisibility: Public
+  context: /
+  schemaFilePath: service_openapi.yaml

@@ -1,0 +1,27 @@
+openapi: 3.0.1
+info:
+  title: /
+  version: 1.0.0
+servers:
+- url: "{server}:{port}/"
+  variables:
+    server:
+      default: http://localhost
+    port:
+      default: "9090"
+paths:
+  /fhir/r4/metadata:
+    get:
+      summary: |-
+        The capability statement is a key part of the overall conformance framework in FHIR. It is used as a statement of the
+        features of actual software, or of a set of rules for an application to provide. This statement connects to all the
+        detailed statements of functionality, such as StructureDefinitions and ValueSets. This composite statement of application
+        capability may be used for system compatibility testing, code generation, or as the basis for a conformance assessment.
+        For further information https://hl7.org/fhir/capabilitystatement.html
+      operationId: getFhirR4Metadata
+      responses:
+        "200":
+          description: Ok
+        "500":
+          description: InternalServerError
+components: {}

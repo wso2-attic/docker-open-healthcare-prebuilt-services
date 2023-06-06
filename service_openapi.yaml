@@ -1,0 +1,62 @@
+openapi: 3.0.1
+info:
+  title: /
+  version: 1.0.2
+servers:
+- url: "{server}:{port}/"
+  variables:
+    server:
+      default: http://localhost
+    port:
+      default: "9090"
+paths:
+  /fhir/r4/Patient:
+    get:
+      operationId: getFhirR4Patient
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/fhir+json:
+              schema:
+                type: object
+            application/fhir+xml:
+              schema:
+                type: object
+    post:
+      operationId: postFhirR4Patient
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              description: Any type of entity body
+      responses:
+        "201":
+          description: Created
+          content:
+            application/fhir+json:
+              schema:
+                type: object
+            application/fhir+xml:
+              schema:
+                type: object
+  /fhir/r4/Patient/{id}:
+    get:
+      operationId: getFhirR4PatientId
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/fhir+json:
+              schema:
+                type: object
+            application/fhir+xml:
+              schema:
+                type: object
+components: {}

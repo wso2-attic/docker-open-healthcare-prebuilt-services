@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: /
+  version: 1.0.0
+servers:
+- url: "{server}:{port}/"
+  variables:
+    server:
+      default: http://localhost
+    port:
+      default: "9090"
+paths:
+  /fhir/r4/.well-known/smart-configuration:
+    get:
+      summary: |-
+        The authorization endpoints accepted by a FHIR resource server are exposed as a Well-Known Uniform Resource Identifiers (URIs) (RFC5785) JSON document.
+        Reference: https://build.fhir.org/ig/HL7/smart-app-launch/conformance.html#using-well-known
+      operationId: getFhirR4WellKnownSmartConfiguration
+      responses:
+        "200":
+          description: Ok
+        "500":
+          description: InternalServerError
+components: {}

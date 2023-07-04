@@ -5,7 +5,7 @@ RUN apk add --update --no-cache curl jq
 RUN mkdir -p /home/ballerina
 
 # Update the release tag when creating a new release
-ARG RELEASE_TAG="v1.0.0"
+ARG RELEASE_TAG="epicconnect-v1.0.2"
 
 ARG RELEASE_URL="https://api.github.com/repos/wso2/open-healthcare-choreo-accelerators/releases/tags/${RELEASE_TAG}"
 
